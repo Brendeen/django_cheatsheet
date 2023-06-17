@@ -14,9 +14,6 @@ Deactivate at the end with deactivate
 
 Create virtual environment
 
-python3.11 -m venv .venv
-source .venv/bin/activate
-
 mkdir django-things (just an example name)
 
 pip install django
@@ -34,7 +31,11 @@ control C to stop server
 
 python manage.py migrate
 
-charm up and enter the file db.sqlite3
+charm up
+
+inside settings.py in INSTALLED_APPS, write your apps in string format
+
+Enter the file db.sqlite3
 
 refresh the page (click main then hit the refresh button)
 
@@ -99,8 +100,26 @@ You can optionally put in an email, but make the name admin and use a good devel
 
 then type y if password to short error comes up
 
+## Django forms
 
+inside views.py in the CreateView class, include the line...
+
+    fields = "__all__"
+
+Example form
+
+    {% block content %}
+    <form method="POST">
+    {% csrf_token %}
+    {{form}}
+    <input type="submit" value="SUBMIT">
+    </form>
+    {% endblock content %}
 
 ### What every file does
 
+views.py - this is how the model/page is viewed
+
 urls.py - this is where we define routes
+
+templates - this file holds all our html files
