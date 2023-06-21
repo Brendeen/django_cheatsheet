@@ -123,3 +123,11 @@ views.py - this is how the model/page is viewed
 urls.py - this is where we define routes
 
 templates - this file holds all our html files
+
+### Useful links
+
+- [Flowbite styling components](https://flowbite.com/docs/components/navbar/)
+
+- [Flowbite/Tailwind configuration](https://flowbite.com/docs/getting-started/django/)
+
+- [Django Docs](https://docs.djangoproject.com/en/4.2/)
